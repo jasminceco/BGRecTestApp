@@ -93,12 +93,14 @@ final class AudioRecorderManager: NSObject {
 		self.recorder!.delegate = self
 		self.recorder!.isMeteringEnabled = true
 		
+    
 		if !self.recorder!.prepareToRecord() {
 			print("Audio Recorder prepare failed")
 			throw AudioErrorType.recordFailed
 		}
 		
-		if !self.recorder!.record() {
+        // this is safety it will run for 1 hour
+        if !self.recorder!.record(forDuration: 60 * 60) {
 			print("Audio Recorder start failed")
 			throw AudioErrorType.recordFailed
 		}
