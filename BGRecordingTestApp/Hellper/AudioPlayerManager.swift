@@ -101,7 +101,10 @@ final class AudioPlayerManager: NSObject {
 	}
 
 	func stop() throws {
-        myTimer.invalidate()
+        if myTimer != nil {
+             myTimer.invalidate()
+        }
+       
 		if !self.isRunning {
 			print("Audio Player did fail to stop: there is nothing currently playing")
 			throw AudioErrorType.notCurrentlyPlaying
