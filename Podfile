@@ -7,4 +7,6 @@ target 'BGRecordingTestApp' do
 
   # Pods for BGRecordingTestApp
 pod 'SoundWave'
+pod 'Fabric'
+pod 'Crashlytics'
 end

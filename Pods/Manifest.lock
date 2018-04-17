@@ -1,12 +1,19 @@
 PODS:
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
+  - Fabric (1.7.6)
   - SoundWave (0.1.2)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - SoundWave
 
 SPEC CHECKSUMS:
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   SoundWave: 74af192045482ba1b881c6fd063655bb46162fa0
 
-PODFILE CHECKSUM: f9a299bf479f533ccb17b4af2a50d373cb7fd62c
+PODFILE CHECKSUM: 2710fca1165df8a500f18a5d38453655d75bcbe2
 
 COCOAPODS: 1.4.0

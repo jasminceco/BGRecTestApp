@@ -88,6 +88,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, UITableViewDele
         self.tableView.register(UINib(nibName: myCell.recordingsTableView, bundle: nil), forCellReuseIdentifier: myCell.recordingsTableView)
         self.tableView.tableFooterView = UIView()
     }
+   
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
