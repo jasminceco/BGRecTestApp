@@ -38,13 +38,6 @@ lane :beta_test do
         )
   # build binary and arhive app
   build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
-  # commit changes
-  git_commit(path: ["./*.zip", "./*.ipa"], message: "Archive app, Update dSYM and .ipa before upload")
-  # push to remote
-  push_to_git_remote(
-                        force: true,   
-                        tags: false  
-                    )
   # upload_to_testflight
   upload_to_testflight(skip_waiting_for_build_processing: true)
   # send message to slack users taht beta build Successfully distributed
@@ -53,7 +46,6 @@ lane :beta_test do
 	      success: true,
         slack_url: "https://hooks.slack.com/services/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"
        )  
-
   # commit changes
   git_commit(path: ["./*.zip", "./*.ipa"], message: "Archive app, Update dSYM and .ipa before upload")
   # push to remote
