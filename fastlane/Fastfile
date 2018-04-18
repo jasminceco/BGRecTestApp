@@ -57,7 +57,11 @@ lane :beta_test do
   # Add a git tag for this build. This will automatically
   # use an appropriate git tag name
   add_git_tag
-slack(message: "Started New beta build")
+slack(
+       message: "Started New beta build",
+	success: true,
+       slack_url: "https://hooks.slack.com/services/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"
+   )
   # Push the new commit and tag back to your git remote
   push_to_git_remote
 
@@ -66,6 +70,12 @@ slack(message: "Started New beta build")
    # upload_to_testflight
 upload_to_testflight(skip_waiting_for_build_processing: true)
 slack(message: "Successfully distributed a new beta build, check it out!")
+
+ slack(
+       message: "Successfully distributed a new beta build, check it out!",
+	success: true,
+       slack_url: "https://hooks.slack.com/services/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"
+   )
   end
 
 end
