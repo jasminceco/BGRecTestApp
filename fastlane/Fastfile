@@ -57,13 +57,14 @@ lane :beta_test do
   # Add a git tag for this build. This will automatically
   # use an appropriate git tag name
   add_git_tag
-
+slack(message: "Started New beta build")
   # Push the new commit and tag back to your git remote
   push_to_git_remote
 
 
     build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
     upload_to_testflight
+slack(message: "Successfully distributed a new beta build, check it out!")
   end
 
 end
