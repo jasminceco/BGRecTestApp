@@ -20,7 +20,7 @@ lane :beta_test do
   # Increment the build number (not the version number)
   # Providing the xcodeproj is optional
   increment_build_number(
-    build_number: latest_testflight_build_number + 2,
+    build_number: latest_testflight_build_number + 1,
     xcodeproj: "BGRecordingTestApp.xcodeproj"
   )
   # Commit the version bump
@@ -47,7 +47,7 @@ lane :beta_test do
         slack_url: "https://hooks.slack.com/services/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"
        )  
   # commit changes
-  git_commit(path: ["./*.zip", "./*.ipa"], message: "Archive app, Update dSYM and .ipa before upload")
+  git_commit(message: "Archive app, Update dSYM and .ipa before upload")
   # push to remote
   push_to_git_remote(
                         force: true,   
