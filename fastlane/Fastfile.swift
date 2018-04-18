@@ -14,5 +14,8 @@ class Fastfile: LaneFile {
 		buildApp(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
 		uploadToTestflight(username: "jasmin.ceco@gmail.com")
         incrementBuildNumber()
+        commitVersionBump()
+        
+        
 	}
 }
