@@ -62,6 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        if AudioRecorderManager.shared.isRunning{
+            do{
+                print("[applicationWillTerminate]")
+               try  AudioRecorderManager.shared.stopRecording()
+            }catch{
+                print("[applicationWillTerminate rec eroror]",error.localizedDescription)
+            }
+            
+        }
     }
 
 
