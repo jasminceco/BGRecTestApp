@@ -69,7 +69,6 @@ slack(
     build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
    # upload_to_testflight
 upload_to_testflight(skip_waiting_for_build_processing: true)
-slack(message: "Successfully distributed a new beta build, check it out!")
 
  slack(
        message: "Successfully distributed a new beta build, check it out!",
