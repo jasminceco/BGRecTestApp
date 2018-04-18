@@ -5,72 +5,57 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.013766">
+      <testcase classname="fastlane.lanes" name="00: default_platform" time="0.017684">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: ensure_git_status_clean" time="0.019841">
+      <testcase classname="fastlane.lanes" name="01: ensure_git_status_clean" time="0.019776">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: latest_testflight_build_number" time="11.839259">
+      <testcase classname="fastlane.lanes" name="02: latest_testflight_build_number" time="10.460626">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: increment_build_number" time="1.457803">
+      <testcase classname="fastlane.lanes" name="03: increment_build_number" time="1.53799">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: commit_version_bump" time="0.260183">
+      <testcase classname="fastlane.lanes" name="04: commit_version_bump" time="0.239696">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: add_git_tag" time="0.024665">
+      <testcase classname="fastlane.lanes" name="05: add_git_tag" time="0.025426">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="06: push_to_git_remote" time="5.475126">
+      <testcase classname="fastlane.lanes" name="06: push_to_git_remote" time="6.307828">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="07: slack" time="0.485204">
+      <testcase classname="fastlane.lanes" name="07: slack" time="0.490441">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="08: build_app" time="38.766384">
+      <testcase classname="fastlane.lanes" name="08: build_app" time="41.25433">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="09: upload_to_testflight" time="653.116707">
+      <testcase classname="fastlane.lanes" name="09: upload_to_testflight" time="661.605664">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="10: slack" time="0.446308">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="11: git_commit" time="13.234986">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="12: push_to_git_remote" time="5.038306">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="13: slack" time="0.411035">
+      <testcase classname="fastlane.lanes" name="10: slack" time="0.446826">
         
       </testcase>
     
