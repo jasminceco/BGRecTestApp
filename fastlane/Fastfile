@@ -13,68 +13,39 @@ default_platform(:ios)
 
 platform :ios do
   desc "Push a new beta build to TestFlight"
-  lane :beta do
- # Ensure that your git status is not dirty
-  ensure_git_status_clean
-
-  # Increment the build number (not the version number)
-  # Providing the xcodeproj is optional
-  increment_build_number(
-    build_number: latest_testflight_build_number + 2,
-    xcodeproj: "BGRecordingTestApp.xcodeproj"
-  )
-
-  # Commit the version bump
-  commit_version_bump(xcodeproj: "BGRecordingTestApp.xcodeproj")
-
-  # Add a git tag for this build. This will automatically
-  # use an appropriate git tag name
-  add_git_tag
-
-  # Push the new commit and tag back to your git remote
-  push_to_git_remote
-slack(message: "Started New beta build")
-
-    build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
-    upload_to_testflight
-slack(message: "Successfully distributed a new beta build, check it out!")
-  end
-
+ 
 lane :beta_test do
  # Ensure that your git status is not dirty
   ensure_git_status_clean
-
   # Increment the build number (not the version number)
   # Providing the xcodeproj is optional
   increment_build_number(
-    build_number: latest_testflight_build_number + 2,
+    build_number: latest_testflight_build_number + 1,
     xcodeproj: "BGRecordingTestApp.xcodeproj"
   )
-
   # Commit the version bump
   commit_version_bump(xcodeproj: "BGRecordingTestApp.xcodeproj")
-
   # Add a git tag for this build. This will automatically
   # use an appropriate git tag name
   add_git_tag
-slack(
-       message: "Started New beta build",
-	success: true,
-       slack_url: "https://hooks.slack.com/services/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"
-   )
   # Push the new commit and tag back to your git remote
   push_to_git_remote
+  # send message to slack users taht beta build started
+  slack(
+        message: "Started New beta build",
+	      success: true,
+        slack_url: "https://hooks.slack.com/services/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"
+        )
 
-
-    build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
-   # upload_to_testflight
-upload_to_testflight(skip_waiting_for_build_processing: true)
-
- slack(
-       message: "Successfully distributed a new beta build, check it out!",
-	success: true,
-       slack_url: "https://hooks.slack.com/services/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"
-   )
+  build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
+  # upload_to_testflight
+  upload_to_testflight(skip_waiting_for_build_processing: true)
+  # send message to slack users taht beta build Successfully distributed
+  slack(
+        message: "Successfully distributed a new beta build, check it out!",
+	      success: true,
+        slack_url: "https://hooks.slack.com/services/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"
+       )  
   end
 
 end
