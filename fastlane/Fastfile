@@ -30,7 +30,7 @@ lane :beta_test do
   add_git_tag
   # Push the new commit and tag back to your git remote
   push_to_git_remote
-  # send message to slack users taht beta build started
+  # send message to slack users that beta build started
   slack(
         message: "Started New beta build",
 	      success: true,
@@ -38,26 +38,23 @@ lane :beta_test do
         )
   # build binary and arhive app
   build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
+  # ako hoce da cekas kada ce proci procesing oda odkomentarisati liniju ispod
   # upload_to_testflight
+  # skip_waiting_for_build_processing: true :)
   upload_to_testflight(skip_waiting_for_build_processing: true)
-  # send message to slack users taht beta build Successfully distributed
+  # send message to slack users that beta build Successfully distributed
   slack(
         message: "Successfully distributed a new beta build, check it out!",
 	      success: true,
         slack_url: "https://hooks.slack.com/services/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"
        )  
+
+  # ako nema git ignore onda ce .ipa (cca 100MB) .zip DSYM biti pod version controlom te ih treba uplodovati     
   # commit changes
-  git_commit(message: "Archive app, Update dSYM and .ipa before upload")
+  # git_commit(message: "Archive app, Update dSYM and .ipa before upload")
   # push to remote
-  push_to_git_remote(
-                        force: true,   
-                        tags: false  
-                    )
- slack(
-        message: "Commited changes and pushed to remote",
-        success: true,
-        slack_url: "https://hooks.slack.com/services/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"
- ) 
+  # push_to_git_remote( force: true, tags: false)
+  # slack( message: "Commited changes and pushed to remote",success: true,slack_url: "https://hooks.slack.com/services/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") 
   end
 
 end
