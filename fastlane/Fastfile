@@ -47,7 +47,7 @@ lane :beta_test do
   # Increment the build number (not the version number)
   # Providing the xcodeproj is optional
   increment_build_number(
-    build_number: latest_testflight_build_number + 3,
+    build_number: latest_testflight_build_number + 1,
     xcodeproj: "BGRecordingTestApp.xcodeproj"
   )
 
@@ -63,7 +63,8 @@ slack(message: "Started New beta build")
 
 
     build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
-    upload_to_testflight
+   # upload_to_testflight
+upload_to_testflight(skip_waiting_for_build_processing: true)
 slack(message: "Successfully distributed a new beta build, check it out!")
   end
 
