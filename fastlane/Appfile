@@ -1,0 +1,8 @@
+app_identifier("com.comtrade.BGRecordingTestApp") # The bundle identifier of your app
+apple_id("jasmin.ceco@gmail.com") # Your Apple email address
+
+itc_team_id("118104269") # iTunes Connect Team ID
+team_id("HMQALEF4UR") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
