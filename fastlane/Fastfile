@@ -33,10 +33,11 @@ platform :ios do
 
   # Push the new commit and tag back to your git remote
   push_to_git_remote
-
+slack(message: "Started New beta build")
 
     build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
     upload_to_testflight
+slack(message: "Successfully distributed a new beta build, check it out!")
   end
 
 lane :beta_test do
