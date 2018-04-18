@@ -53,6 +53,19 @@ lane :beta_test do
 	      success: true,
         slack_url: "https://hooks.slack.com/services/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"
        )  
+
+  # commit changes
+  git_commit(path: ["./*.zip", "./*.ipa"], message: "Archive app, Update dSYM and .ipa before upload")
+  # push to remote
+  push_to_git_remote(
+                        force: true,   
+                        tags: false  
+                    )
+ slack(
+        message: "Commited changes and pushed to remote",
+        success: true,
+        slack_url: "https://hooks.slack.com/services/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"
+ ) 
   end
 
 end
