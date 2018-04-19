@@ -26,17 +26,14 @@ match(git_url: "https://github.com/jasminceco/Certificate.git",type: "appstore",
   ensure_git_status_clean
   # Increment the build number (not the version number)
   # Providing the xcodeproj is optional
-  increment_build_number(
-    build_number: latest_testflight_build_number + 1,
-    xcodeproj: "BGRecordingTestApp.xcodeproj"
-  )
+  #increment_build_number(build_number: latest_testflight_build_number + 1, xcodeproj: "BGRecordingTestApp.xcodeproj")
   # Commit the version bump
-  commit_version_bump(xcodeproj: "BGRecordingTestApp.xcodeproj")
+ # commit_version_bump(xcodeproj: "BGRecordingTestApp.xcodeproj")
   # Add a git tag for this build. This will automatically
   # use an appropriate git tag name
-  add_git_tag
+  #add_git_tag
   # Push the new commit and tag back to your git remote
-  push_to_git_remote
+#  push_to_git_remote
   # send message to slack users that beta build started
   slack(
         message: "Started New beta build",
