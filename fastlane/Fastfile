@@ -22,11 +22,11 @@ match(git_url: "https://github.com/jasminceco/Certificate.git",
 
 match(git_url: "https://github.com/jasminceco/Certificate.git",
       type: "adhoc",
-      app_identifier: "tools.fastlane.app")
+      app_identifier: "com.comtrade.BGRecordingTestApp")
 
 match(git_url: "https://github.com/jasminceco/Certificate.git",
       type: "enterprise",
-      app_identifier: "tools.fastlane.app")
+      app_identifier: "com.comtrade.BGRecordingTestApp")
 
 
  # Ensure that your git status is not dirty
