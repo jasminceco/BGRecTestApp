@@ -21,21 +21,20 @@ match(git_url: "https://github.com/jasminceco/Certificate.git",type: "appstore",
 
 # match(git_url: "https://github.com/jasminceco/Certificate.git",type: "adhoc", app_identifier: "com.comtrade.BGRecordingTestApp")
 
-
  # Ensure that your git status is not dirty
   ensure_git_status_clean
   # Increment the build number (not the version number)
   # Providing the xcodeproj is optional
-  #increment_build_number(build_number: latest_testflight_build_number + 1, xcodeproj: "BGRecordingTestApp.xcodeproj")
+  increment_build_number(build_number: latest_testflight_build_number + 1, xcodeproj: "BGRecordingTestApp.xcodeproj")
   # Commit the version bump
- # commit_version_bump(xcodeproj: "BGRecordingTestApp.xcodeproj")
+  commit_version_bump(xcodeproj: "BGRecordingTestApp.xcodeproj")
   # Add a git tag for this build. This will automatically
   # use an appropriate git tag name
-  #add_git_tag
+  add_git_tag
   # Push the new commit and tag back to your git remote
-#  push_to_git_remote
+  push_to_git_remote
   # send message to slack users that beta build started
- # slack( message: "Started New beta build",success: true,slack_url: "https://hooks.slack.com/services/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")
+ slack( message: "Started New beta build",success: true,slack_url: "https://hooks.slack.com/services/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")
   # build binary and arhive app
   build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
   # ako hoce da cekas kada ce proci procesing oda odkomentarisati liniju ispod
@@ -55,6 +54,23 @@ match(git_url: "https://github.com/jasminceco/Certificate.git",type: "appstore",
   # push to remote
   # push_to_git_remote( force: true, tags: false)
   # slack( message: "Commited changes and pushed to remote",success: true,slack_url: "https://hooks.slack.com/services/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") 
+  end
+
+lane :beta_test_public do
+match(git_url: "https://github.com/jasminceco/Certificate.git",type: "appstore", app_identifier: "com.comtrade.BGRecordingTestApp")
+  slack( message: "Started New beta build",success: true,slack_url: "https://hooks.slack.com/services/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")
+  # build binary and arhive app
+  build_app(workspace: "BGRecordingTestApp.xcworkspace", scheme: "BGRecordingTestApp")
+  # ako hoce da cekas kada ce proci procesing oda odkomentarisati liniju ispod
+  # upload_to_testflight
+  # skip_waiting_for_build_processing: true :)
+  upload_to_testflight(skip_waiting_for_build_processing: true)
+  # send message to slack users that beta build Successfully distributed
+  slack(
+        message: "Successfully distributed a new beta build, check it out!",
+	      success: true,
+        slack_url: "https://hooks.slack.com/services/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"
+       )  
   end
 
 end
