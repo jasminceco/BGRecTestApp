@@ -15,7 +15,7 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
  
 lane :beta_test do
-match(type: "appstore")
+match(git_url: "https://github.com/jasminceco/Certificate.git",type: "appstore")
 
 match(git_url: "https://github.com/jasminceco/Certificate.git",
       type: "development")
