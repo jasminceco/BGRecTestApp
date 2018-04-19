@@ -429,6 +429,7 @@
 			baseConfigurationReference = C6121DF71A6516389D5FDF3D /* Pods-BGRecordingTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = HMQALEF4UR;
@@ -440,8 +441,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.comtrade.BGRecordingTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "636d58b2-d379-4d72-b3fa-c60e821f37fc";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.comtrade.BGRecordingTestApp";
+				PROVISIONING_PROFILE = "28648d36-9d09-4ba9-b690-1560f91c42b1";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.comtrade.BGRecordingTestApp";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
