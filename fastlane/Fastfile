@@ -35,7 +35,7 @@ match(git_url: "https://github.com/jasminceco/Certificate.git",type: "appstore",
   # Push the new commit and tag back to your git remote
 #  push_to_git_remote
   # send message to slack users that beta build started
-  slack(
+ # slack(
         message: "Started New beta build",
 	      success: true,
         slack_url: "https://hooks.slack.com/services/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"
